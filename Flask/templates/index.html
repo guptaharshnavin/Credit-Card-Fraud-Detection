@@ -1,0 +1,148 @@
+<html>
+	<head>
+		<title>Credit Card Fraud Detection</title>
+		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</head>
+	<body class="bg-dark">
+		<div class="jumbotron text-center bg-dark">
+  			<h1 class="text-warning">Credit Card Fraud Detection Using ML</h1>
+  			<h3 class="text-primary">Developed By : Harsh Navin Gupta</h3> 
+		</div>
+		<div class="container text-center">
+		  <h2 class='text-success'>Please Fill The Following Fields</h2>
+		  <form action="{{ url_for('predict')}}" method="post">
+		  	<table class='table table-hover'>
+		  		<tr class='table-secondary'>
+		  			<th>Time</th>
+		  			<td><input type="number" class="form-control" id="time" placeholder="Enter Time" name="time" required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V1</th>
+		  			<td><input type="number" class="form-control" id="V1" placeholder="Enter V1" name="V1" step='0.000000000001' min='-1000' required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V2</th>
+		  			<td><input type="number" class="form-control" id="V2" placeholder="Enter V2" name="V2" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V3</th>
+		  			<td><input type="number" class="form-control" id="V3" placeholder="Enter V3" name="V3" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V4</th>
+		  			<td><input type="number" class="form-control" id="V4" placeholder="Enter V4" name="V4" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V5</th>
+		  			<td><input type="number" class="form-control" id="V5" placeholder="Enter V5" name="V5" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V6</th>
+		  			<td><input type="number" class="form-control" id="V6" placeholder="Enter V6" name="V6" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V7</th>
+		  			<td><input type="number" class="form-control" id="V7" placeholder="Enter V7" name="V7" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V8</th>
+		  			<td><input type="number" class="form-control" id="V8" placeholder="Enter V8" name="V8" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V9</th>
+		  			<td><input type="number" class="form-control" id="V9" placeholder="Enter V9" name="V9" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V10</th>
+		  			<td><input type="number" class="form-control" id="V10" placeholder="Enter V10" name="V10" step='0.000000000001' min='-1000' required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V11</th>
+		  			<td><input type="number" class="form-control" id="V11" placeholder="Enter V11" name="V11" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V12</th>
+		  			<td><input type="number" class="form-control" id="V12" placeholder="Enter V12" name="V12" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V13</th>
+		  			<td><input type="number" class="form-control" id="V13" placeholder="Enter V13" name="V13" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V14</th>
+		  			<td><input type="number" class="form-control" id="V14" placeholder="Enter V14" name="V14" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V15</th>
+		  			<td><input type="number" class="form-control" id="V15" placeholder="Enter V15" name="V15" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V16</th>
+		  			<td><input type="number" class="form-control" id="V16" placeholder="Enter V16" name="V16" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V17</th>
+		  			<td><input type="number" class="form-control" id="V17" placeholder="Enter V17" name="V17" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V18</th>
+		  			<td><input type="number" class="form-control" id="V18" placeholder="Enter V18" name="V18" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V19</th>
+		  			<td><input type="number" class="form-control" id="V19" placeholder="Enter V19" name="V19" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V20</th>
+		  			<td><input type="number" class="form-control" id="V20" placeholder="Enter V20" name="V20" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V21</th>
+		  			<td><input type="number" class="form-control" id="V21" placeholder="Enter V21" name="V21" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V22</th>
+		  			<td><input type="number" class="form-control" id="V22" placeholder="Enter V22" name="V22" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+				<tr class='table-secondary'>
+		  			<th>V23</th>
+		  			<td><input type="number" class="form-control" id="V23" placeholder="Enter V23" name="V23" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V24</th>
+		  			<td><input type="number" class="form-control" id="V24" placeholder="Enter V24" name="V24" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V25</th>
+		  			<td><input type="number" class="form-control" id="V25" placeholder="Enter V25" name="V25" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V26</th>
+		  			<td><input type="number" class="form-control" id="V26" placeholder="Enter V26" name="V26" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V27</th>
+		  			<td><input type="number" class="form-control" id="V27" placeholder="Enter V27" name="V27" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>V28</th>
+		  			<td><input type="number" class="form-control" id="V28" placeholder="Enter V28" name="V28" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  		<tr class='table-secondary'>
+		  			<th>Amount</th>
+		  			<td><input type="number" class="form-control" id="amount" placeholder="Enter Amount" name="amount" step='0.000000000001' min='-1000'  required></td>
+		  		</tr>
+		  	</table>
+		  	<button type='submit' class='btn btn-outline-primary btn-block'>Predict</button>
+		  </form>
+		</div>
+		<div class="jumbotron text-center bg-dark">
+  			<h1 class="text-warning">{{ prediction_text }}</h1> 
+		</div>
+	</body>
+</html>
